@@ -1,0 +1,12 @@
+### Get ALL
+get http://localhost:3001/api/notes/
+
+### Get One
+get http://localhost:3001/api/notes/60949be1a9903d1e6049ff96
+
+### Get Error not found id (correct)
+get http://localhost:3001/api/notes/6093199c3e0945fc81fba63d
+
+### Get Error bad id 
+get http://localhost:3001/api/notes/6093199c3e094da35iadd321
+

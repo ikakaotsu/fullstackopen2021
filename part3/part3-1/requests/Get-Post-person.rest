@@ -1,0 +1,25 @@
+### GET ALL
+GET http://localhost:3001/api/persons HTTP/1.1
+content-type: application/json
+
+### Create
+POST http://localhost:3001/api/persons HTTP/1.1
+content-type: application/json
+
+{
+    "name":"Wolf",
+    "number": "123456789"
+}
+
+### Delete
+DELETE http://localhost:3001/api/persons/609efe09e73d1981f7bac2bc HTTP/1.1
+content-type: application/json
+
+### Update
+PUT  http://localhost:3001/api/persons/60a592342745be0e5aa34d79 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Dogs",
+    "number": "1234567891"
+}

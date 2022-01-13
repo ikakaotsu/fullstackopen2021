@@ -1,0 +1,49 @@
+version: "3.7"
+services:
+  mongodb:
+    container_name: mongo-container
+    image: mongo:4.2.0
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_ROOT_DATABASE: root-db
+
+    volumes:
+      - ./config_init/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    # networks:
+    #   - express-mongo
+  # frontend:
+  #   build: frontend
+  #   ports:
+  #     - 8080:8080
+  #   stdin_open: true
+  #   volumes:
+  #     - ./frontend:/usr/src/app
+  #     - /usr/src/app/node_modules
+  #   container_name: frontend
+  #   restart: always
+  #   networks:
+  #     - http_server
+  #   depends_on:
+  #     - backend
+#   backend:
+#     container_name: backend
+#     restart: always
+#     build: backend
+#     volumes:
+#       - ./backend:/usr/src/app
+#       - /usr/src/app/node_modules
+#     depends_on:
+#       - mongodb
+#     networks:
+#       - express-mongo
+#       - http_server
+#     #expose:
+#     ports:
+#       - 3000:3000
+#  networks:
+# #   http_server:
+#    express-mongo:
